@@ -1,36 +1,24 @@
 <div class="board">
-  <ng-container *ngIf="board">
-    <div class="board-bar">
-      <p class="board-name">{{ board.name }}</p>
-    </div>
+	<ng-container *ngIf="board">
+		<div class="board-bar">
+			<p class="board-name">{{ board.name }}</p>
+		</div>
 
-    <div class="board-wrapper">
-      <div class="board-columns" cdkDropListGroup>
-        <div class="board-column" *ngFor="let column of board.columns">
-          <div class="column-title">
-            {{ column.name }}
-          </div>
+		<div class="board-wrapper">
+			<div class="board-columns" cdkDropListGroup>
+				<ng-container *ngFor="let column of board.columns">
+					<board-column [column]="column"> </board-column>
+				</ng-container>
 
-          <div
-            class="tasks-container"
-            cdkDropList
-            [cdkDropListData]="column.tasks"
-            (cdkDropListDropped)="drop($event)"
-          >
-            <div class="task" *ngFor="let item of column.tasks" cdkDrag>
-              {{ item }}
-            </div>
-
-             <div class="task">
-              <button (click)="addTask(column)">Adicionar Task</button>
-             </div>
-          </div>
-        </div>
-
-        <div class="add-column">
-          <button (click)="addColumn()">Adicionar Coluna</button>
-        </div>
-      </div>
-    </div>
-  </ng-container>
+				<div class="add-column">
+					<button class="button is-fullwidth" (click)="addColumn()">
+            <span>Adicionar Coluna</span>
+            <span class="icon">
+              <i class="iconify" data-icon="mdi:table-column-plus-after" data-inline="false"></i>
+            </span>
+          </button>
+				</div>
+			</div>
+		</div>
+	</ng-container>
 </div>

@@ -7,11 +7,6 @@ import {
   Output,
   EventEmitter,
 } from '@angular/core';
-import {
-  CdkDragDrop,
-  moveItemInArray,
-  transferArrayItem,
-} from '@angular/cdk/drag-drop';
 
 import { BoardsService } from '../../services/boards.service';
 
@@ -31,27 +26,6 @@ export class BoardComponent implements OnInit, AfterViewInit {
 
   addColumn() {
     this.board.columns?.push(new Column('Teste', []));
-  }
-
-  addTask(column: Column) {
-    column.tasks.push('teste');
-  }
-
-  drop(event: CdkDragDrop<string[]>) {
-    if (event.previousContainer === event.container) {
-      moveItemInArray(
-        event.container.data,
-        event.previousIndex,
-        event.currentIndex
-      );
-    } else {
-      transferArrayItem(
-        event.previousContainer.data,
-        event.container.data,
-        event.previousIndex,
-        event.currentIndex
-      );
-    }
   }
 
   ngOnInit() {}
