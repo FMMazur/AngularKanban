@@ -1,0 +1,20 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import url('https://cdn.jsdelivr.net/npm/typeface-jetbrains-mono@2.0.0/dist/index.min.css');
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html, body { height: 100%; }
+html {
+  background-image: url("./assets/background.png");
+  background-size: cover;
+
+  overflow-y: auto !important;
+}
+
+/* BULMA CONFIGURATION*/
+$family-primary: "JetBrains Mono";
+@import "../node_modules/bulma/bulma.sass";

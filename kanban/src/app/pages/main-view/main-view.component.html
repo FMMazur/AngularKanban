@@ -1,0 +1,14 @@
+<div class="root">
+	<div class="navbar has-background-dark">
+		<div class="navbar-brand">
+			<div class="navbar-item">
+				<h1 class="app-name has-gradient-text">Kanbangular</h1>
+			</div>
+		</div>
+	</div>
+
+	<ng-container *ngFor="let board of boards">
+    <board [board]='board'></board>
+  </ng-container>
+	<button (click)="addBoard()">Criar Board</button>
+</div>
