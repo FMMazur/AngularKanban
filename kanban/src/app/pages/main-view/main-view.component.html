@@ -1,14 +1,73 @@
 <div class="root">
-	<div class="navbar has-background-dark">
-		<div class="navbar-brand">
-			<div class="navbar-item">
-				<h1 class="app-name has-gradient-text">Kanbangular</h1>
-			</div>
-		</div>
-	</div>
+  <div class="navbar has-background-dark">
+    <div class="navbar-brand">
+      <div class="navbar-item">
+        <h1 class="app-name has-gradient-text">Kanbangular</h1>
+      </div>
+    </div>
+    <div class="navbar-menu">
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <a
+            class="button is-primary"
+            href="https://github.com/FMMazur/AngularKanban/issues/new"
+            target="_blank"
+          >
+            <span class="icon">
+              <span
+                class="iconify"
+                data-icon="clarity:bug-line"
+                data-inline="false"
+                style="color: white;"
+                data-width="48"
+                data-height="48"
+              ></span>
+            </span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
 
-	<ng-container *ngFor="let board of boards">
-    <board [board]='board'></board>
+  <ng-container *ngFor="let board of boards">
+    <board [board]="board"></board>
   </ng-container>
-	<button (click)="addBoard()">Criar Board</button>
+  <div>
+    <button class="button is-fullwidth" (click)="addBoard()">
+      <span>Criar Board</span>
+      <span class="icon">
+        <i
+          class="iconify"
+          data-icon="uil:create-dashboard"
+          data-inline="false"
+        ></i>
+      </span>
+    </button>
+  </div>
+
+  <footer class="footer has-background-dark">
+    <div class="container">
+      <div class="media has-text-centered">
+        <div class="media-left">
+          <p>
+            <strong class="has-gradient-text">Kanbangular</strong> by
+            <a href="https://github.com/FMMazur">FMMazur</a>. The source code is
+            licensed
+            <a href="http://opensource.org/licenses/mit-license.php">MIT</a>.
+          </p>
+        </div>
+        <div class="media-content"></div>
+        <div class="media-right">
+          <a href="https://bulma.io">
+            <img
+              src="https://bulma.io/images/made-with-bulma--dark.png"
+              alt="Made with Bulma"
+              width="128"
+              height="24"
+            />
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
 </div>
